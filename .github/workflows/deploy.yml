@@ -24,7 +24,7 @@ jobs:
           protocol: ftps
           port: 21
           server-dir: ${{ secrets.SERVER_DIR }}
-          local-dir: /deboraantara.ltconsulting-group.com/
+          local-dir: ./deboraantara.ltconsulting-group.com/
           exclude: |
             **/.git*
             **/.github/**
