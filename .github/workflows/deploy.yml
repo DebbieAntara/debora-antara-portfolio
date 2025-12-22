@@ -22,9 +22,11 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          port: 21
-          server-dir: ${{ secrets.SERVER_DIR }}
-          local-dir: ./deboraantara.ltconsulting-group.com/
+          security: explicit          # FTPS explícito (TLS)
+          port: 21                    # tu cPanel indica FTPS en 21
+          passive: true
+          server-dir: ${{ secrets.SERVER_DIR }}   # ej: /deboraantara.ltconsulting-group.com/
+          local-dir: ./                           # raíz del repo
           exclude: |
             **/.git*
             **/.github/**
@@ -32,3 +34,4 @@ jobs:
             **/.vscode/**
             **/README.md
           log-level: standard
+          timeout: 600000
