@@ -166,40 +166,80 @@ section[id]{ scroll-margin-top: 90px; }
 }
 
 /* =========================================================
-   Hero — Responsive (mobile: texto primero, luego foto)
+   Hero (desktop)
+   ========================================================= */
+.hero{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-block: clamp(40px, 8vw, 96px);
+}
+
+.hero .txt{
+  flex: 1;
+  min-width: 0;
+}
+
+.hero .hi{ color: var(--muted); margin:0 0 var(--space-2); }
+.hero h1{ font-size: var(--fs-hero); margin:0 0 var(--space-3); }
+.hero .sub{ margin:0 0 var(--space-3); font-weight:600; color: var(--ink); }
+.hero .lead{ color: var(--muted); margin: 0 0 var(--space-4); }
+
+.hero .actions{
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* Foto hero */
+.hero .photo{
+  flex: 0 0 auto;
+  width: clamp(240px, 32vw, 360px);
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 6px solid var(--white);
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+/* =========================================================
+   Hero (responsive)
+   - texto primero, foto después
+   - botones centrados
    ========================================================= */
 @media (max-width: 900px){
   .hero{
-    flex-direction: column;      /* <- clave: apila */
-    align-items: stretch;
-    text-align: left;
+    flex-direction: column;     /* texto arriba, foto abajo */
+    text-align: center;
+    align-items: center;
   }
 
-  .hero .txt{
-    order: 1;                    /* texto primero */
-    width: 100%;
-  }
-
+  .hero .txt{ order: 1; width: 100%; }
   .hero .photo{
-    order: 2;                    /* foto después */
-    width: min(360px, 90vw);
-    max-height: none;            /* evita recorte raro */
-    margin: 18px auto 0;         /* centra la foto */
+    order: 2;
+    width: min(320px, 86vw);
+    margin-top: 18px;
+    border-width: 4px;
   }
 
   .hero .actions{
-    justify-content: flex-start;
+    justify-content: center;    /* CENTRA los botones */
   }
 }
 
-/* Extra: botones en columna en pantallas mini */
+/* Botones uno debajo del otro y centrados (pantallas pequeñas) */
 @media (max-width: 520px){
   .hero .actions{
     flex-direction: column;
-    align-items: stretch;
-  }
-  .hero .actions .btn{
+    align-items: center;
     width: 100%;
+  }
+
+  .hero .actions .btn{
+    width: min(320px, 100%);
+    justify-content: center;
   }
 }
 
