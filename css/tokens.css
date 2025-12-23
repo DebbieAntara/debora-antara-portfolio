@@ -11,7 +11,7 @@
   --white: #FFFFFF;
 
   /* =========================
-     Mapeo de uso
+     Mapeo de uso (UI tokens)
      ========================= */
   --bg: var(--white);
   --text: var(--ink);
@@ -20,6 +20,16 @@
   --primary-hover: var(--rose);
   --card: var(--white);
   --separator: #F4D7CC;
+
+  /* =========================
+     Transparencias (para no hardcodear rgba)
+     ========================= */
+  --primary-10: rgba(181,131,141,.10);
+  --primary-12: rgba(181,131,141,.12);
+  --primary-14: rgba(181,131,141,.14);
+  --primary-35: rgba(181,131,141,.35);
+  --primary-45: rgba(181,131,141,.45);
+  --ink-10: rgba(11,18,32,.10);
 
   /* =========================
      Tipografía
@@ -50,4 +60,10 @@
   --radius-md: 12px;
   --radius-lg: 16px;
   --shadow-md: 0 10px 24px rgba(11,18,32,.08);
+  --shadow-hover: 0 14px 34px rgba(11,18,32,.10);
+
+  /* =========================
+     Accesibilidad
+     ========================= */
+  --focus-ring: var(--primary-45);
 }

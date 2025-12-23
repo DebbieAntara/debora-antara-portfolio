@@ -40,7 +40,7 @@
   <!-- Accesibilidad: salto directo al contenido -->
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <!-- Navbar -->
+  <!-- Navbar (sticky + menú móvil) -->
   <header class="navbar">
     <div class="container inner">
       <a class="brand" href="#hola" aria-label="Inicio">DAC</a>
@@ -50,6 +50,7 @@
         <i class="bi bi-list" aria-hidden="true"></i>
       </button>
 
+      <!-- Menú principal -->
       <nav id="menu" class="menu" aria-label="Principal">
         <a href="#hola">Hola</a>
         <a href="#especialidades">Habilidades</a>
@@ -64,7 +65,7 @@
   </header>
 
   <main id="contenido">
-    <!-- Hero -->
+    <!-- Hero (presentación + CTA) -->
     <section id="hola" class="container hero" aria-labelledby="hero-title">
       <div class="txt">
         <p class="hi">Hola, soy</p>
@@ -94,7 +95,7 @@
            alt="Débora Antara Correa – Transformación Digital y Procesos">
     </section>
 
-    <!-- Habilidades -->
+    <!-- Habilidades (cards) -->
     <section id="especialidades" class="container" aria-labelledby="esp-title">
       <h2 id="esp-title" class="section-title">Habilidades</h2>
       <p class="section-lead">Consultoría y liderazgo para optimizar procesos, asegurar ejecución y capturar valor medible.</p>
@@ -141,12 +142,12 @@
       </div>
     </section>
 
-    <!-- Cita -->
+    <!-- Cita (mensaje corto) -->
     <section id="cita" class="container">
       <blockquote class="quote">“Lo que no se mide, no se gestiona; y lo que no se gestiona, no mejora.”</blockquote>
     </section>
 
-    <!-- Proyectos -->
+    <!-- Proyectos (consultoría + front-end) -->
     <section id="proyectos" class="container" aria-labelledby="proy-title">
       <h2 id="proy-title" class="section-title">Mis proyectos</h2>
       <p class="section-lead">Casos y entregables donde se evidencia impacto, ejecución y mejora continua.</p>
@@ -189,7 +190,9 @@
           <p>Proyecto de maquetación inicial con estructura semántica, estilos base y control de versiones.</p>
           <p><strong>Stack:</strong> HTML · CSS · Git · GitHub</p>
           <div class="actions">
-            <a class="btn outline" href="https://github.com/DebbieAntara/MI-PRIMERA-BIBLIOTECA-VIRTUAL" target="_blank" rel="noopener">
+            <a class="btn outline"
+               href="https://github.com/DebbieAntara/MI-PRIMERA-BIBLIOTECA-VIRTUAL"
+               target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github" aria-hidden="true"></i> Repositorio
             </a>
           </div>
@@ -209,7 +212,7 @@
       </div>
     </section>
 
-    <!-- Contacto -->
+    <!-- Contacto (lista + formulario demo) -->
     <section id="contacto" class="container" aria-labelledby="contact-title">
       <h2 id="contact-title" class="section-title">Contáctame</h2>
       <p>Si buscas mejorar eficiencia, controlar riesgos y ejecutar transformación con disciplina, conversemos.</p>
@@ -220,15 +223,18 @@
             <a href="mailto:debora.antarac@pucp.edu.pe">debora.antarac@pucp.edu.pe</a>
           </p>
           <p><i class="bi bi-linkedin" aria-hidden="true"></i>
-            <a href="https://www.linkedin.com/in/deboraantarac" target="_blank" rel="noopener">linkedin.com/in/deboraantarac</a>
+            <a href="https://www.linkedin.com/in/deboraantarac" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/deboraantarac
+            </a>
           </p>
           <p><i class="bi bi-github" aria-hidden="true"></i>
-            <a href="https://github.com/DebbieAntara" target="_blank" rel="noopener">github.com/DebbieAntara</a>
+            <a href="https://github.com/DebbieAntara" target="_blank" rel="noopener noreferrer">
+              github.com/DebbieAntara
+            </a>
           </p>
           <p><i class="bi bi-geo-alt" aria-hidden="true"></i> Lima, Perú</p>
         </div>
 
-        <!-- Formulario (demo visual + validación HTML5) -->
         <form class="contact-form" action="#" method="post">
           <div class="form-row">
             <label for="nombre">Nombre*</label>
@@ -258,7 +264,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (links + cierre) -->
   <footer class="footer">
     <div class="container">
       <nav class="footer-nav" aria-label="Secundario">
@@ -267,37 +273,34 @@
         <a href="#proyectos">Proyectos</a> ·
         <a href="#contacto">Contacto</a> ·
         <a href="mailto:debora.antarac@pucp.edu.pe">Email</a> ·
-        <a href="https://www.linkedin.com/in/deboraantarac" target="_blank" rel="noopener">LinkedIn</a> ·
-        <a href="https://github.com/DebbieAntara" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/deboraantarac" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+        <a href="https://github.com/DebbieAntara" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
       <p>Hecho con foco en resultados.</p>
     </div>
   </footer>
 
-  <!-- JS mínimo: menú móvil (debe ir ANTES de cerrar body) -->
+  <!-- JS mínimo: menú móvil -->
   <script>
     const btn = document.querySelector('.nav-toggle');
     const menu = document.querySelector('#menu');
-    const links = menu.querySelectorAll('a');
 
-    function setOpen(state){
-      menu.classList.toggle('is-open', state);
-      btn.setAttribute('aria-expanded', state ? 'true' : 'false');
-      btn.setAttribute('aria-label', state ? 'Cerrar menú' : 'Abrir menú');
-      btn.innerHTML = state
-        ? '<i class="bi bi-x-lg" aria-hidden="true"></i>'
-        : '<i class="bi bi-list" aria-hidden="true"></i>';
+    if(btn && menu){
+      const links = menu.querySelectorAll('a');
+
+      function setOpen(state){
+        menu.classList.toggle('is-open', state);
+        btn.setAttribute('aria-expanded', state ? 'true' : 'false');
+        btn.setAttribute('aria-label', state ? 'Cerrar menú' : 'Abrir menú');
+        btn.innerHTML = state
+          ? '<i class="bi bi-x-lg" aria-hidden="true"></i>'
+          : '<i class="bi bi-list" aria-hidden="true"></i>';
+      }
+
+      btn.addEventListener('click', () => setOpen(!menu.classList.contains('is-open')));
+      links.forEach(a => a.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('keydown', (e) => { if(e.key === 'Escape') setOpen(false); });
     }
-
-    btn.addEventListener('click', () => setOpen(!menu.classList.contains('is-open')));
-
-    // Cierra al tocar un link
-    links.forEach(a => a.addEventListener('click', () => setOpen(false)));
-
-    // Cierra con ESC
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape') setOpen(false);
-    });
   </script>
 </body>
 </html>
