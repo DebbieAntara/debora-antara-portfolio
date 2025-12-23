@@ -1,32 +1,42 @@
 :root{
-  /* 🎨 Paleta (versión final) */
+  /* =========================
+     Paleta (pastel + tinta)
+     ========================= */
   --ink: #0B1220;        /* texto principal / títulos */
-  --slate: #6D6875;      /* texto secundario / bordes suaves */
-  --mauve: #B5838D;      /* brand / CTA principal */
-  --rose: #E5989B;       /* acento / hover */
-  --peach: #FFB4A2;      /* separadores / chips suaves */
-  --apricot: #FFCDB2;    /* fondos suaves de sección (#cita) */
-  --white: #FFFFFF;      /* base / cards */
+  --slate: #6D6875;      /* texto secundario */
+  --mauve: #B5838D;      /* brand / CTA */
+  --rose: #E5989B;       /* hover / acento */
+  --peach: #FFB4A2;      /* chips */
+  --apricot: #FFCDB2;    /* fondos suaves */
+  --white: #FFFFFF;
 
-  /* Mapeo de uso */
+  /* =========================
+     Mapeo de uso
+     ========================= */
   --bg: var(--white);
   --text: var(--ink);
   --muted: var(--slate);
   --primary: var(--mauve);
   --primary-hover: var(--rose);
   --card: var(--white);
-  --separator: #F4D7CC;  /* línea muy suave (ligero del peach) */
+  --separator: #F4D7CC;
 
-  /* Tipografía (definida en el <head>) */
+  /* =========================
+     Tipografía
+     ========================= */
   --font-sans: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-  /* Tamaños de fuente */
+  /* =========================
+     Tamaños de fuente
+     ========================= */
   --fs-hero: clamp(28px, 5vw, 48px);
   --fs-h2: clamp(22px, 3.2vw, 32px);
   --fs-body: 16px;
   --fs-small: 14px;
 
-  /* Espaciado */
+  /* =========================
+     Espaciado
+     ========================= */
   --space-1: 8px;
   --space-2: 12px;
   --space-3: 16px;
@@ -34,8 +44,10 @@
   --space-5: 32px;
   --space-6: 48px;
 
-  /* Sombra y radios (permitido) */
-  --shadow-md: 0 10px 24px rgba(11,18,32,.08);
+  /* =========================
+     Radios + sombras
+     ========================= */
   --radius-md: 12px;
   --radius-lg: 16px;
+  --shadow-md: 0 10px 24px rgba(11,18,32,.08);
 }
