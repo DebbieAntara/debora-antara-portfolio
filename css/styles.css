@@ -184,17 +184,23 @@ section[id]{ scroll-margin-top: 90px; }
 
 /* Foto hero */
 .hero .photo{
-  flex: 0 0 320px;
-  max-width: 38vw;
+  width: clamp(220px, 32vw, 320px);
+  flex: 0 0 auto;
+  max-width: 100%;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   border: 6px solid var(--white);
   object-fit: cover;
+  object-position: center 15%;
 }
 
 @media (max-width: 900px){
-  .hero{ flex-direction: column-reverse; text-align:center; }
-  .hero .photo{ max-width: 74vw; }
+  .hero .photo{
+    width: min(300px, 82vw);
+    max-height: 360px;
+    margin-inline: auto;
+    border-width: 4px;
+  }
 }
 
 /* =========================================================
@@ -354,7 +360,7 @@ section[id]{ scroll-margin-top: 90px; }
   margin-bottom: var(--space-3);
 }
 
-label{
+.contact-form label{
   font-size: var(--fs-small);
   color: var(--ink);
   font-weight: 600;
@@ -370,8 +376,8 @@ input, textarea{
 
 /* Focus visible con teclado + focus normal con mouse/tap */
 input:focus, textarea:focus{
-  outline: 2px solid var(--focus-ring);
-  border-color: var(--primary-35);
+  outline: 2px solid rgba(181,131,141,.45);
+  border-color: rgba(181,131,141,.45);
 }
 
 textarea{ resize: vertical; }
