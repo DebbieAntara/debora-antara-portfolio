@@ -212,48 +212,70 @@
       </div>
     </section>
 
-    <!-- Contacto (lista + formulario demo) -->
-    <section id="contacto" class="container" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="section-title">Contáctame</h2>
-      <p>Si buscas mejorar eficiencia, controlar riesgos y ejecutar transformación con disciplina, conversemos.</p>
-
+    <!-- Contacto (lista + formulario demo) -->   
+    <section id="contacto" class="container contact" aria-labelledby="contacto-title">
       <div class="contact-grid">
-        <div class="contact-list">
-          <p><i class="bi bi-envelope" aria-hidden="true"></i>
-            <a href="mailto:debora.antarac@pucp.edu.pe">debora.antarac@pucp.edu.pe</a>
+        <!-- Columna izquierda -->
+        <div class="contact-left">
+          <h2 id="contacto-title" class="section-title">Contáctame</h2>
+
+          <p class="contact-lead">
+            Si buscas mejorar eficiencia, controlar riesgos y ejecutar transformación con disciplina, conversemos.
           </p>
-          <p><i class="bi bi-linkedin" aria-hidden="true"></i>
-            <a href="https://www.linkedin.com/in/deboraantarac" target="_blank" rel="noopener noreferrer">
-              linkedin.com/in/deboraantarac
-            </a>
-          </p>
-          <p><i class="bi bi-github" aria-hidden="true"></i>
-            <a href="https://github.com/DebbieAntara" target="_blank" rel="noopener noreferrer">
-              github.com/DebbieAntara
-            </a>
-          </p>
-          <p><i class="bi bi-geo-alt" aria-hidden="true"></i> Lima, Perú</p>
+
+          <ul class="contact-links" aria-label="Datos de contacto">
+            <li>
+              <a class="contact-link" href="mailto:debora.antarac@pucp.edu.pe">
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+                <span>debora.antarac@pucp.edu.pe</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="contact-link" href="https://www.linkedin.com/in/deboraantarac" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                <span>linkedin.com/in/deboraantarac</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="contact-link" href="https://github.com/DebbieAntara" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github" aria-hidden="true"></i>
+                <span>github.com/DebbieAntara</span>
+              </a>
+            </li>
+
+            <li class="contact-link no-link">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              <span>Lima, Perú</span>
+            </li>
+          </ul>
         </div>
 
-        <form class="contact-form" action="#" method="post">
-          <div class="form-row">
-            <label for="nombre">Nombre*</label>
-            <input id="nombre" name="nombre" type="text" autocomplete="given-name" required>
-          </div>
+        <!-- Columna derecha -->
+        <form class="contact-form" action="#" method="post" aria-label="Formulario de contacto">
+          <h2 class="section-title">Escríbeme</h2>
 
-          <div class="form-row">
-            <label for="apellido">Apellido*</label>
-            <input id="apellido" name="apellido" type="text" autocomplete="family-name" required>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="nombre">Nombre*</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="given-name" placeholder="p. ej.: Débora" required>
+            </div>
+
+            <div class="form-row">
+              <label for="apellido">Apellido*</label>
+              <input id="apellido" name="apellido" type="text" autocomplete="family-name" placeholder="p. ej.: Antara" required>
+            </div>
           </div>
 
           <div class="form-row">
             <label for="email">Email*</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="p. ej.: debora@mail.com" required>
           </div>
 
           <div class="form-row">
             <label for="mensaje">Mensaje*</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe un mensaje aquí..." required></textarea>
           </div>
 
           <button class="btn" type="submit">

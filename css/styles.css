@@ -158,6 +158,7 @@ section[id]{ scroll-margin-top: 90px; }
   font-size: var(--fs-h2);
   margin: 0 0 var(--space-4);
   color: var(--ink);
+  line-height: 1.15;
 }
 
 .section-lead{
@@ -256,7 +257,7 @@ section[id]{ scroll-margin-top: 90px; }
 @media (min-width: 901px){
   .hero .actions{
     display: grid;
-    grid-template-columns: 1fr 1fr; /* iguales */
+    grid-template-columns: 1fr 1fr; 
     gap: var(--space-3);
     max-width: 560px;
   }
@@ -278,24 +279,24 @@ section[id]{ scroll-margin-top: 90px; }
   padding: 12px 18px;
   border-radius:999px;
   border:1px solid transparent;
-  background: var(--primary);
-  color:#fff;
+  background: var(--rose);
+  color: var(--ink);
   transition: background .2s ease, transform .15s ease;
 }
 
 .btn:hover{
-  background: var(--primary-hover);
+  background: var(--mauve);
   transform: translateY(-1px);
 }
 
 .btn.outline{
   background: transparent;
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--mauve);
+  border-color: var(--mauve);
 }
 
 .btn.outline:hover{
-  background: var(--primary-12);
+  background: rgba(229,152,155,.18);
 }
 
 /* =========================================================
@@ -374,7 +375,7 @@ section[id]{ scroll-margin-top: 90px; }
   margin: 0;
   border-radius: 0;
 
-  background: #E5989B;   /* color de fondo */
+  background:var(--rose); 
   color: rgba(255,255,255,.92); /* MISMO color para texto y comilla (blanco suave) */
 
   min-height: clamp(240px, 28vw, 380px);
@@ -421,68 +422,127 @@ section[id]{ scroll-margin-top: 90px; }
   color: var(--ink);
 }
 
-.card{ display:flex; flex-direction:column; }
-.card .chips{ margin-top:auto; }
-
-
 /* =========================================================
    Contacto (lista + formulario)
    ========================================================= */
 .contact-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-5);
-  align-items: start;
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(28px, 4vw, 64px);
+  align-items:start;
 }
 
-@media (max-width: 900px){
-  .contact-grid{ grid-template-columns: 1fr; }
+.contact-title{
+  font-size: clamp(34px, 4.6vw, 54px);
+  line-height: 1.05;
+  margin: 0 0 14px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
 }
 
-.contact-list p{ margin: 6px 0; color: var(--muted); }
-.contact-list i{ color: var(--primary); margin-right: 8px; }
-.contact-list a{ text-decoration: underline; }
-.contact-list a:hover{ color: var(--primary); }
+.contact-lead{
+  margin: 0 0 22px;
+  color: var(--muted);
+  max-width: 52ch;
+  line-height: 1.7;
+}
 
+/* Links (izquierda) */
+.contact-links{
+  list-style:none;
+  padding:0;
+  margin: 22px 0 0;
+  display:grid;
+  gap: 14px;
+}
+
+.contact-link{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  color: var(--muted);
+  text-decoration:none;
+}
+
+.contact-link i{
+  font-size: 22px;
+  color: var(--mauve);
+}
+
+.contact-link:hover{
+  color: var(--ink);
+}
+
+.contact-link:hover i{
+  color: var(--rose);
+}
+
+.contact-link.no-link{
+  cursor: default;
+}
+
+/* Form (derecha) */
 .contact-form{
-  background: var(--card);
-  border: 1px solid var(--separator);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-md);
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  display:flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Nombre + Apellido en 2 columnas */
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
 .form-row{
   display:flex;
   flex-direction:column;
-  gap:8px;
-  margin-bottom: var(--space-3);
+  gap: 8px;
+  margin: 0;
 }
 
 .contact-form label{
-  font-size: var(--fs-small);
-  color: var(--ink);
   font-weight: 600;
+  color: var(--ink);
 }
 
-input, textarea{
+.contact-form input,
+.contact-form textarea{
   font: inherit;
-  padding: 12px 12px;
-  border-radius: 12px;
-  border: 1px solid var(--separator);
-  background: var(--white);
+  padding: 14px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(181,131,141,.22);
+  background: rgba(181,131,141,.08);
 }
 
-/* Focus visible con teclado + focus normal con mouse/tap */
-input:focus, textarea:focus{
-  outline: 2px solid rgba(181,131,141,.45);
-  border-color: rgba(181,131,141,.45);
+.contact-form textarea{
+  border-radius: 18px;
+  resize: vertical;
 }
 
-textarea{ resize: vertical; }
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline: 2px solid rgba(229,152,155,.35);
+  border-color: rgba(229,152,155,.35);
+}
 
+/* Botón como ADA: no full width */
 .contact-form .btn{
-  width: 100%;
+  width: fit-content;
+  padding-inline: 26px;
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .contact-grid{ grid-template-columns: 1fr; }
+  .form-grid{ grid-template-columns: 1fr; }
+  .contact-form .btn{ width: 100%; }
 }
 
 /* =========================================================
@@ -498,30 +558,6 @@ textarea{ resize: vertical; }
 .footer-nav a{ color: var(--muted); }
 .footer-nav a:hover{ color: var(--primary); }
 
-/* =========================
-   NUEVO COLOR BOTONES
-   ========================= */
-.btn{
-  background: #E5989B;
-  color: #0B1220;            /* texto oscuro = se lee perfecto */
-  border-color: transparent;
-}
-
-.btn:hover{
-  background: #B5838D;
-  color: #0B1220;
-}
-
-.btn.outline{
-  background: transparent;
-  color: #B5838D;
-  border-color: #B5838D;
-}
-
-.btn.outline:hover{
-  background: rgba(229,152,155,.18);  /* hover suave */
-}
-
 
 /* =========================
    PROYECTOS: chips/acciones pegados abajo
@@ -529,11 +565,11 @@ textarea{ resize: vertical; }
 #proyectos .card{
   display: flex;
   flex-direction: column;
-  padding-bottom: 18px; /* menos “aire” abajo */
+  padding-bottom: 18px; 
 }
 
 #proyectos .card .chips,
 #proyectos .card .actions{
-  margin-top: auto;     /* esto los empuja al fondo */
-  padding-top: 12px;    /* separación bonita con el texto */
+  margin-top: auto;    
+  padding-top: 12px;    
 }
