@@ -361,16 +361,47 @@ section[id]{ scroll-margin-top: 90px; }
 .card .icon i{ font-size: 32px; }
 
 /* =========================================================
-   Cita
+   Cita 
    ========================================================= */
-.quote{
-  background: var(--apricot);
-  color: var(--ink);
-  padding: var(--space-6);
-  border-radius: var(--radius-lg);
-  font-size: clamp(18px, 3vw, 22px);
+
+.quote-section{
+  padding: 0;            
   margin: 0;
 }
+
+.quote{
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+
+  background: #E5989B;   /* color de fondo */
+  color: rgba(255,255,255,.92); /* MISMO color para texto y comilla (blanco suave) */
+
+  min-height: clamp(240px, 28vw, 380px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
+
+  /* padding interno alineado a tu container de 1100px */
+  padding-block: clamp(56px, 7vw, 96px);
+  padding-inline: max(16px, calc((100vw - 1100px)/2));
+
+  font-size: clamp(18px, 2.4vw, 28px);
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.quote::before{
+  content: "““"; 
+  font-size: clamp(90px, 10vw, 150px);
+  line-height: 1;
+  letter-spacing: -0.10em;
+  color: rgba(255,255,255,.92); 
+}
+
 
 /* =========================================================
    Chips
@@ -389,6 +420,10 @@ section[id]{ scroll-margin-top: 90px; }
   background: var(--peach);
   color: var(--ink);
 }
+
+.card{ display:flex; flex-direction:column; }
+.card .chips{ margin-top:auto; }
+
 
 /* =========================================================
    Contacto (lista + formulario)
@@ -462,3 +497,43 @@ textarea{ resize: vertical; }
 
 .footer-nav a{ color: var(--muted); }
 .footer-nav a:hover{ color: var(--primary); }
+
+/* =========================
+   NUEVO COLOR BOTONES
+   ========================= */
+.btn{
+  background: #E5989B;
+  color: #0B1220;            /* texto oscuro = se lee perfecto */
+  border-color: transparent;
+}
+
+.btn:hover{
+  background: #B5838D;
+  color: #0B1220;
+}
+
+.btn.outline{
+  background: transparent;
+  color: #B5838D;
+  border-color: #B5838D;
+}
+
+.btn.outline:hover{
+  background: rgba(229,152,155,.18);  /* hover suave */
+}
+
+
+/* =========================
+   PROYECTOS: chips/acciones pegados abajo
+   ========================= */
+#proyectos .card{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 18px; /* menos “aire” abajo */
+}
+
+#proyectos .card .chips,
+#proyectos .card .actions{
+  margin-top: auto;     /* esto los empuja al fondo */
+  padding-top: 12px;    /* separación bonita con el texto */
+}
