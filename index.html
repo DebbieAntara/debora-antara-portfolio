@@ -149,10 +149,13 @@
 
     <!-- Proyectos (consultoría + front-end) -->
     <section id="proyectos" class="container" aria-labelledby="proy-title">
+
       <h2 id="proy-title" class="section-title">Mis proyectos</h2>
       <p class="section-lead">Casos y entregables donde se evidencia impacto, ejecución y mejora continua.</p>
 
       <div class="grid">
+
+        <!-- Card 1 -->
         <article class="card">
           <h3>Case 01 — Reingeniería E2E + KPIs (Banca | Confidencial)</h3>
           <p>Rediseño AS-IS/TO-BE y definición de KPIs/SLA para mejorar eficiencia operativa y control de riesgos.</p>
@@ -163,6 +166,7 @@
           </div>
         </article>
 
+        <!-- Card 2 -->
         <article class="card">
           <h3>Case 02 — PMO/VMO Governance (Sector corporativo | Confidencial)</h3>
           <p>Estandarización de governance, seguimiento RAG y gestión de riesgos/cambios para visibilidad ejecutiva.</p>
@@ -173,6 +177,7 @@
           </div>
         </article>
 
+        <!-- Card 3 -->
         <article class="card">
           <h3>Case 03 — Automatización / Modelado BPMN (Sector público | Confidencial)</h3>
           <p>Modelado BPMN con trazabilidad de estados y estandarización para procesos digitales.</p>
@@ -182,35 +187,67 @@
             <span class="chip">BPMN</span><span class="chip">Automatización</span><span class="chip">Trazabilidad</span>
           </div>
         </article>
-      </div>
 
-      <div class="grid">
+        <!-- Card 4 -->
         <article class="card">
-          <h3>Mi primera biblioteca virtual (ADA ITW)</h3>
-          <p>Proyecto de maquetación inicial con estructura semántica, estilos base y control de versiones.</p>
-          <p><strong>Stack:</strong> HTML · CSS · Git · GitHub</p>
-          <div class="actions">
-            <a class="btn outline"
-               href="https://github.com/DebbieAntara/MI-PRIMERA-BIBLIOTECA-VIRTUAL"
-               target="_blank" rel="noopener noreferrer">
-              <i class="bi bi-github" aria-hidden="true"></i> Repositorio
-            </a>
+          <h3>Case 04 — Transformación digital &amp; automatización (Corporativo | Confidencial)</h3>
+          <p>Diseño e implementación de procesos digitales en entornos financieros y sector público.</p>
+          <p><strong>Incluye:</strong> BPMN, reglas de negocio, automatización y estandarización operativa.</p>
+          <p><strong>Enfoque:</strong> eficiencia, control, continuidad y escalabilidad.</p>
+
+          <div class="chips">
+            <span class="chip">Transformación digital</span>
+            <span class="chip">ITIL</span>
+            <span class="chip">Procesos</span>
+            <span class="chip">Gobierno TI</span>
           </div>
         </article>
 
+        <!-- Card 5 -->
         <article class="card">
-          <h3>Próximo — Maquetación responsive (En curso)</h3>
-          <p>HTML/CSS responsive, buenas prácticas y accesibilidad básica.</p>
-          <p><em>Estado:</em> En desarrollo.</p>
+          <h3>Case 05 — Continuidad de negocio &amp; calidad de servicios TI (Corporativo | Confidencial)</h3>
+          <p>Diseño y análisis de continuidad operativa, calidad de servicio y mejora continua en TI.</p>
+          <p><strong>Incluye:</strong> BIA, continuidad, SLAs, gestión de calidad y enfoque ITIL.</p>
+
+          <div class="chips">
+            <span class="chip">Continuidad de Negocio</span>
+            <span class="chip">ITIL</span>
+            <span class="chip">Calidad TI</span>
+            <span class="chip">SLA</span>
+          </div>
         </article>
 
+        <!-- Card 6 -->
         <article class="card">
-          <h3>Próximo — JavaScript básico (En curso)</h3>
-          <p>Variables, funciones y manipulación de DOM para interacción simple.</p>
-          <p><em>Estado:</em> En desarrollo.</p>
+          <h3>Prototipado digital</h3>
+          <p>Prototipos funcionales para validación temprana de soluciones y experiencia de usuario.</p>
+          <p><strong>Incluye:</strong></p>
+          <p>• Portafolio profesional (HTML · CSS)</p>
+          <p>• Biblioteca virtual (JavaScript)</p>
+
+          <div class="actions">
+            <a class="btn outline"
+              href="https://github.com/DebbieAntara/debora-antara-portfolio.git"
+              target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github" aria-hidden="true"></i> Repositorio — Portafolio
+            </a>
+
+            <a class="btn outline"
+              href="https://github.com/DebbieAntara/Trabajo_Practico_Integrador_Sep25.git"
+              target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github" aria-hidden="true"></i> Repositorio — Biblioteca
+            </a>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Prototipado</span>
+            <span class="chip">UX</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+          </div>
         </article>
       </div>
-    </section>
 
     <!-- Contacto (lista + formulario demo) -->   
     <section id="contacto" class="container contact" aria-labelledby="contacto-title">
@@ -253,7 +290,17 @@
         </div>
 
         <!-- Columna derecha -->
-        <form class="contact-form" action="#" method="post" aria-label="Formulario de contacto">
+        <form class="contact-form" action="https://formsubmit.co/86493025ee67d8ac5739ffd4e52108c8" method="post" aria-label="Formulario de contacto">
+          
+          <!-- Config FormSubmit -->
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portafolio">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://deboraantara.ltconsulting-group.com/#contacto">
+
+          <!-- Anti-spam (honeypot) -->
+          <input type="text" name="_honey" style="display:none">
+          
           <h2 class="section-title">Escríbeme</h2>
 
           <div class="form-grid">
@@ -286,19 +333,37 @@
     </section>
   </main>
 
-  <!-- Footer (links + cierre) -->
-  <footer class="footer">
+  <!-- Footer -->
+
+  <footer class="footer" aria-label="Pie de página">
     <div class="container">
-      <nav class="footer-nav" aria-label="Secundario">
-        <a href="#hola">Hola</a> ·
-        <a href="#especialidades">Habilidades</a> ·
-        <a href="#proyectos">Proyectos</a> ·
-        <a href="#contacto">Contacto</a> ·
-        <a href="mailto:debora.antarac@pucp.edu.pe">Email</a> ·
-        <a href="https://www.linkedin.com/in/deboraantarac" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
-        <a href="https://github.com/DebbieAntara" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <!-- Links internos -->
+      <nav class="footer-nav" aria-label="Navegación">
+        <a href="#hola">Hola</a>
+        <a href="#especialidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
       </nav>
-      <p>Hecho con foco en resultados.</p>
+
+      <!-- Iconos sociales -->
+      <div class="footer-social" aria-label="Redes y contacto">
+        <a href="mailto:debora.antarac@pucp.edu.pe" aria-label="Email">
+          <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/deboraantarac" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="bi bi-linkedin" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://github.com/DebbieAntara" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="bi bi-github" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="footer-copy">
+        <p class="footer-copy">© 2025 Débora Antara. Todos los derechos reservados.</p>
+      </p>
     </div>
   </footer>
 

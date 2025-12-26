@@ -7,7 +7,6 @@
   --mauve: #B5838D;      /* brand / CTA */
   --rose: #E5989B;       /* hover / acento */
   --peach: #FFB4A2;      /* chips */
-  --apricot: #FFCDB2;    /* fondos suaves */
   --white: #FFFFFF;
 
   /* =========================
@@ -25,7 +24,6 @@
      Transparencias (para no hardcodear rgba)
      ========================= */
   --primary-10: rgba(181,131,141,.10);
-  --primary-12: rgba(181,131,141,.12);
   --primary-14: rgba(181,131,141,.14);
   --primary-35: rgba(181,131,141,.35);
   --primary-45: rgba(181,131,141,.45);
